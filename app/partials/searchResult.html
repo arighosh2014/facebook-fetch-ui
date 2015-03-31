@@ -1,0 +1,16 @@
+<div ng-repeat="page in result">
+	<div class="panel panel-primary"><h3 class="panel-heading">{{page.page_name}}</h3></div>
+  <div class="row">
+    <div ng-class="{'col-xs-4': columns == 3, 'col-xs-3': columns == 4}" ng-repeat="content in page.contents">
+      <div class="panel panel-primary">
+          <div class="panel-heading">
+          <h3 class="panel-title"><span ng-bind-html="content.content"></span></h3>
+            <br/>
+            <div ng-repeat="info in content.additional_info">
+            		<h3 class="panel-title">{{info.name}} :: {{info.value}}</h3>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
